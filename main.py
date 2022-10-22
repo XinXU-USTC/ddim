@@ -5,6 +5,8 @@ import logging
 import yaml
 import sys
 import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "5, 6, 7, 8" 
 import torch
 import numpy as np
 import torch.utils.tensorboard as tb

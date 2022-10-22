@@ -108,7 +108,8 @@ class Diffusion(object):
         model = Model(config)
 
         model = model.to(self.device)
-        model = torch.nn.DataParallel(model)
+
+        model = torch.nn.DataParallel(model, device_ids=list(range(6)))
 
         optimizer = get_optimizer(self.config, model.parameters())
 
